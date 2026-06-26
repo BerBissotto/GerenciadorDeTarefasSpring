@@ -1,10 +1,10 @@
 package com.example.GerenciadorDeTarefasSpring.controller;
 
-import ch.qos.logback.core.model.Model;
 import com.example.GerenciadorDeTarefasSpring.model.Usuario;
 import com.example.GerenciadorDeTarefasSpring.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -15,7 +15,7 @@ public class UsuarioController {
 
     @GetMapping("/novo")
     public String novo(Model model){
-        model.addAtribute("usuario", new Usuario());
+        model.addAttribute("usuario", new Usuario());
         return "usuarios/form";
     }
 
